@@ -11,9 +11,9 @@ Restaurant.destroy_all
 puts "Creating Restaurants.."
 5.times do
   restaurant = Restaurant.create(
-    name: Faker::Restaurant.name ,
+    name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
-    phone_number: Faker::PhoneNumber,
+    phone_number: Faker::PhoneNumber.phone_number,
     category: %w[chinese italian japanese french belgian].sample
   )
   puts "restaurant with id #{restaurant.id} has been created!"
