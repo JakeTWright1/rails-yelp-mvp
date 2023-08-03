@@ -10,5 +10,27 @@
 </div>
   <br>
 <div class="h-100 d-flex align-items-center justify-content-center">
-  <p>Cuisine: <%= @restaurant.category %></p>
+  <p>Cuisine: <%= @restaurant.category.capitalize %></p>
+</div>
+
+<div class="h-100 d-flex align-items-center justify-content-center">
+  <div>
+    <h2>Reviews</h2>
+  </div>
+</div>
+<div class="h-100 d-flex align-items-center justify-content-center">
+  <ul>
+    <% @restaurant.reviews.each do |review|%>
+      <li><%= review.content%> | <%= review.rating %></li>
+    <% end %>
+  </ul>
+</div>
+
+
+<div class="h-100 d-flex align-items-center justify-content-center">
+  <p><%= link_to 'Add a review', new_restaurant_review_path(@restaurant), :class => "btn btn-primary" %></p>
+</div>
+
+<div class="h-100 d-flex align-items-center justify-content-center">
+  <p><%= link_to 'Return to all Restaurants', restaurants_path, :class => "btn btn-primary" %></p>
 </div>
