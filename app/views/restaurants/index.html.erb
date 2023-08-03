@@ -1,9 +1,18 @@
-<div class="container">
+<div  class="h-100 d-flex align-items-center justify-content-center">
   <h1>All Restaurants</h1>
+</div>
+<hr>
 
+<div class="h-100 d-flex align-items-center justify-content-center">
+  <div>
   <% @restaurants.each do |restaurant| %>
-    <ul>
-    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <ul class="list-unstyled">
+      <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
     </ul>
   <% end %>
+  </div>
+</div>
+
+<div class="h-100 d-flex align-items-center justify-content-center">
+  <%= link_to "Add a restaurant", new_restaurant_path, class: "btn btn-primary" %>
 </div>
